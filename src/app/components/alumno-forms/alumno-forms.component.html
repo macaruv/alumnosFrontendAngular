@@ -1,0 +1,32 @@
+<p-toast></p-toast>
+<div class="p-fluid p-formgrid p-grid mt-4">
+  <h2 class="p-col-12">Formulario de Alumno</h2>
+  <div class="p-field p-col-12 p-md-6">
+    <label for="buscarIdAlumno">Buscar por ID Alumno</label>
+    <input type="number" id="buscarIdAlumno" pInputText [(ngModel)]="buscarIdAlumno" name="buscarIdAlumno" />
+    <div class="p-col-12 p-md-6 mt-2">
+      <button pButton type="button" label="Buscar" icon="pi pi-search" class="p-button-primary mr-2" (click)="loadAlumno()"></button>
+      <button pButton type="button" label="Limpiar Campos" icon="pi pi-refresh" class="p-button-info" (click)="clearFields()"></button>
+    </div>
+  </div>
+  <form (ngSubmit)="onSubmit()" #alumnoForm="ngForm" class="p-fluid p-formgrid p-grid mt-4">
+    <div class="p-field p-col-12 p-md-6">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" pInputText [(ngModel)]="alumno.nombre" name="nombre" required />
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="apellidoPaterno">Apellido Paterno</label>
+      <input type="text" id="apellidoPaterno" pInputText [(ngModel)]="alumno.apellidoPaterno" name="apellidoPaterno" required />
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="apellidoMaterno">Apellido Materno</label>
+      <input type="text" id="apellidoMaterno" pInputText [(ngModel)]="alumno.apellidoMaterno" name="apellidoMaterno" required />
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label for="email">Email</label>
+      <input type="email" id="email" pInputText [(ngModel)]="alumno.email" name="email" required />
+    </div>
+    <div class="p-col-12 p-md-6 mt-4">
+      <button pButton type="submit" label="Guardar/Actualizar" icon="pi pi-check" class="p-button-primary mr-2"></button>
+      <button pButton type="button" label="Eliminar Alumno" icon="pi pi-trash" class="p-button-danger" (click)="onDelete()"></button>
+    </div>

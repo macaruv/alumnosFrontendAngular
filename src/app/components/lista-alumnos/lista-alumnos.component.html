@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="p-col-12">Lista de Alumnos</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos">
+          <td>{{ alumno.idAlumno }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellidoPaterno }}</td>
+          <td>{{ alumno.apellidoMaterno }}</td>
+          <td>{{ alumno.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
